@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,21 +20,13 @@ Route::get('/', function () {
 });
 
 
-//Route::resource('inventory', InventoryController::class);
-//Route::get('add-product', [App\Http\Controllers\InventoryController::class, 'addpro'])->name('add.product');
-//Route::post('SubmitProduct', [App\Http\Controllers\InventoryController::class, 'addProductSubmit'])->name('submit.product');
-//Route::get('subcatories/{id}', [App\Http\Controllers\InventoryController::class, 'getsubcategories']);
-//Route::get('productedit/{id}', [App\Http\Controllers\InventoryController::class, 'editProduct'])->name('edit.product');
-//Route::post('updateproduct/{id}', [App\Http\Controllers\InventoryController::class, 'UpdateProduct'])->name('update.product');
-//Route::get('DeleteProduct/{id}', [App\Http\Controllers\InventoryController::class, 'destroy'])->name('delete.pro');
-//Route::delete('/inventoryDeleteAll', [App\Http\Controllers\InventoryController::class, 'deleteAll']);
-//Route::get('product-show/{id}', [App\Http\Controllers\InventoryController::class, 'singleshow'])->name('show.product');
-
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/{page}', [App\Http\Controllers\AdminController::class, 'index']);
+
+Route::resource('Allusers', UsersController::class);
+
 
 Route::resource('AllCustomers', CustomerController::class);
 Route::get('add-customer', [App\Http\Controllers\CustomerController::class, 'create'])->name('add.customer');

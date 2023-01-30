@@ -144,3 +144,4 @@ customer::create([
         return response()->json(['success' => "customers Deleted successfully."]);
     }
 }
+

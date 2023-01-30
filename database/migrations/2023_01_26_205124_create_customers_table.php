@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('email', 100)->unique()->nullable();
             $table->float('Salary', 8, 2)->nullable();
             $table->boolean('status');
+            $table->foreignId('user_id')->constrained('users')->onDelete('Cascade');
+
 			$table->softDeletes();
             $table->timestamps();
 

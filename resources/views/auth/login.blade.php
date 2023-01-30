@@ -64,7 +64,7 @@ Pelcro  - Login
                                                    </div>
 												  </div>
                                                     <button type="submit" class="btn btn-main-primary btn-block">
-                                                    {{ __('تسجيل الدخول') }}
+                                                    {{ __('Login ') }}
                                                     </button>
 												</form>
 											</div>
